@@ -15,7 +15,7 @@ If a device starts acting like an attacker—for example, sending too many packe
 
 ## How It Works
 
-1.  **Training (The Notebook):** We used the InSDN dataset to train an XGBoost model. We taught it to ignore specific IP addresses and focus on behaviors like packet timing, size, and flag counts[cite: 7, 18].
+1.  **Training (The Notebook):** We used the InSDN dataset to train an XGBoost model. We taught it to ignore specific IP addresses and focus on behaviors like packet timing, size, and flag counts.
 2.  **Detection (The Controller):** The controller listens to the network switch. It calculates statistics for every flow (conversation) between devices .
 3.  **Action:** Every 10 seconds, the controller asks the model: *"Is this flow dangerous?"* If the Risk Score is **> 75%**, the controller tells the switch to **DROP** all traffic from that device for 5 minutes .
 
